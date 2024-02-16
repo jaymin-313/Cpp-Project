@@ -53,8 +53,9 @@ int main() {
         char b = s1[44];
         char c = s1[3];
         std::cout << b << c<< std::endl;*/
+ 
   
-    std::cin.get();
+    return 0;
 }
 
 //int main() {
