@@ -58,28 +58,3 @@ int main() {
     return 0;
 }
 
-//int main() {
-//	////String s;
-//	//String s1("HELLO EVERYONE");
-//	//String s12(" Welcome to C++ Training ");
-//	////s1.print();
-//	//s1.tolowercase();
-//	//s1.print();
-//	//
-//	//s1.touppercase();
-//	/*s1.concatenate(s12);
-//	s1.print();*/
-//	//s1.print();
-//	////std::cout << s1.length() << std::endl;
-//	//s1.getlength();
-//	//std::cout << s1 << std::endl;
-//	String s1; // Default Constructor
-//String s2("HEloo"); // Default Constructor
-//	String s3(s2); // Copy Constructor
-//	String s4(std::move(s3)); // Move Constructor
-//	String s5 = s4; // Copy Constructor
-//	String s6;
-//	s6 = s2; // copy Assignment 
-//	s1 = "Move assignment"; // Move Assignment
-//	std::cin.get();
-//}
