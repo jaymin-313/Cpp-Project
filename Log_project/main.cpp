@@ -31,28 +31,7 @@ int main() {
    // d.getCache();
    
    
-    //String s = d.stringRep();
-   // d.getCache();
-    //d.getUpdatedDate();
 
-    //d.stringRep();
-      //getCache();
- /* String s1("HELLO EVERYONE");
-		String s12(" Welcome to C++ Training");
-        String s3 = s1;
-        String s4 = "New string";
-         s4.concatenate(s12);
-         s4.print();*/
-       
-  /*      s1.tolowercase();
-        s1.print();
-        s1.touppercase();
-        s1.print();
-        s1.concatenate(s12);
-		s1.print();
-        char b = s1[44];
-        char c = s1[3];
-        std::cout << b << c<< std::endl;*/
  
   
     return 0;
