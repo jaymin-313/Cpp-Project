@@ -8,7 +8,7 @@ namespace utility {
 	class Date {
 	private:
 		struct previousDay {
-			int pre_d{ 2 }, pre_month{ 8 }, pre_year{ 2000 };
+			int pre_d, pre_month, pre_year;
 			bool isFirstCall = true;
 		};
 		int day, month, year;
@@ -21,6 +21,7 @@ namespace utility {
 				 dateToString();
 				//cache = std::move(date);
 				 cache_valid = true;
+				// std::cout << "sourabh\n";
 			}
 		}
 
@@ -98,7 +99,7 @@ namespace utility {
 					return false;
 				}
 		}
-
+		
 		void dateToString();
 		void addDays(const int d);
 		void addMonths(const int m);

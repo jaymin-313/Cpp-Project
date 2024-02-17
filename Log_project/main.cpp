@@ -14,10 +14,14 @@ int main() {
    // Log log;
     Log log{ Log::LevelWarning,{3,1,2024} };
     log.SetLogLevel(Log::LevelInfo);
-    log.Info("Fine !");
-    log.Warn("Careful !");
+    log.Info("Fine ! ",1,3.45,"New string",3.1f);
+    log.Warn("Careful ! ");
    
-    log.Error("Stop !");
+    log.Error("Stop ! ");
+    Date d{ 3,1,2024 };
+    log.changeDate(d);
+    log.Info("NEw Fine ");
+    
     
 //    Date d{ 34,15,2024 };
 
