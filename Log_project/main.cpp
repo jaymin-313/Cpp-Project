@@ -9,35 +9,19 @@ using namespace utility;
 
 
 int main() {
-    // using namespace d;
-    
-   // Log log;
-    Log log{ Log::LevelWarning,{3,1,2024} };
+  
+    Date d2{ 3,1,2024 };
+    Log log{ Log::LevelWarning , d2};
     log.SetLogLevel(Log::LevelInfo);
-    log.Info("Fine ! ",1,3.45,"New string",3.1f);
+    log.Info("Fine ! ");
     log.Warn("Careful ! ");
    
     log.Error("Stop ! ");
-    Date d{ 3,1,2024 };
-    log.changeDate(d);
+    log.changeDate(Date{ 5,1,2024 });
     log.Info("NEw Fine ");
-    
-    
-//    Date d{ 34,15,2024 };
+    log.changeDate(Date{ 5,1,2024 });
+    log.Info("NEw Fine ");
 
-   /* d::date today{ 12, 1, 2024 };
-    today.print_date();*/
-   //Date d{ 31,1,2024 };
-   /* d.addDays(1);
-    d.addMonths(2);
-    d.addYears(3);*/
-   // utility::Date::getCache();
-   // d.getCache();
-   
-   
-
- 
-  
     return 0;
 }
 

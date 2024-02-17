@@ -22,7 +22,10 @@ namespace utility {
     void String::getlength() const {
         std::cout << m_Size << std::endl;
     }
-
+    void String::flush() {
+        m_Buffer.reset();
+        m_Size = 0;
+    }
     void String::tolowercase() {
         for (int i = 0; i < m_Size; i++) {
             m_Buffer[i] = tolower(m_Buffer[i]);

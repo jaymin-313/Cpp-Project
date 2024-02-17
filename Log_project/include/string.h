@@ -93,6 +93,7 @@ namespace utility {
         void print() const;
         void concatenate(const String&);
         static String intToString(int);
+        void flush();
         ~String() {
             //delete[] m_Buffer;
         }

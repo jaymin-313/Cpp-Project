@@ -12,22 +12,17 @@ namespace logging {
             LevelError = 0, LevelWarning, LevelInfo
         };
     private:
-        Level m_LogLevel;
-        utility::Date d;
+        Level m_LogLevel = LevelError;
+        Date d;
     public:
-        Log() {
-            m_LogLevel = LevelError;
-            
-        }
-        Log(Level l1,utility::Date d1) {
-            m_LogLevel = l1;
-            d = d1;
-        }
+        
+        Log(Level l1, Date d1) :m_LogLevel{ l1 }, d{d1} { }
+
         void changeDate(const Date& newDate) {
             this->d = newDate;
         }
         void SetLogLevel(Level level) {
-            m_LogLevel = level;
+            this->m_LogLevel = level;
         }
       
         template<typename... Args>
@@ -36,7 +31,7 @@ namespace logging {
                 std::cout << "[Warning]: " << message;
                 //std::cout << Date::cache << std::endl;
                 std::cout << "Date: ";
-                d.getCache();
+                std::cout << d.getCache();
                 std::cout << " ";
                 print(args...);
                 std::cout << std::endl;
@@ -47,7 +42,7 @@ namespace logging {
             if (m_LogLevel >= LevelError) {
                 std::cout << "[Error]: " << message;
                 std::cout << "Date: ";
-                d.getCache();
+                std::cout<<d.getCache();
                 std::cout << " ";
                 print(args...);
                 std::cout << std::endl;
@@ -58,7 +53,7 @@ namespace logging {
             if (m_LogLevel >= LevelInfo) {
                 std::cout << "[Info]: " << message;
                 std::cout << "Date: ";
-                d.getCache();
+                std::cout << d.getCache();
                 std::cout << " ";
                 print(args...);
                 std::cout << std::endl;

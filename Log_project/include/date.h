@@ -9,28 +9,24 @@ namespace utility {
 	private:
 		struct previousDay {
 			int pre_d, pre_month, pre_year;
-			bool isFirstCall = true;
+			bool isFirstCallDone = false;
 		};
 		int day, month, year;
-		mutable bool cache_valid = false;
+		mutable bool isCacheValid = false;
 		String cache;
-		String date;
 		previousDay prev;
-		void compute_cache_value() {
-			if (!cache_valid) {
-				 dateToString();
-				//cache = std::move(date);
-				 cache_valid = true;
-				// std::cout << "sourabh\n";
-			}
-		}
+		//void compute_cache_value() {
+		//	if (!cache_valid) {
+		//		dateToString();
+		//		//cache = std::move(date);
+		//		cache_valid = true;
+		//		std::cout << "sourabh\n";
+		//	}
+		//}
 
 	public:
-		Date(int d=1, int m=1, int y=2024) {
+		Date(int d=1, int m=1, int y=2024) : day{ d }, month{ m }, year{y} {
 
-			day = d;
-			month = m;
-			year = y;
 			try {
 				if (!dateValid() ){
 					throw myException("Invalid Date");
@@ -42,13 +38,13 @@ namespace utility {
 				std::cout<<"Caught MyException: "<< e.what();
 				
 			}
-			if (prev.isFirstCall || isDateUpdated()) {
+			if (isDateUpdated(*this)) {
 				prev.pre_d = day;
 				prev.pre_month = month;
 				prev.pre_year = year;
-				compute_cache_value();
+				isCacheValid = false;
 				//getCache();
-				prev.isFirstCall = false;
+			
 			}
 
 			//compute_cache_value();
@@ -77,8 +73,12 @@ namespace utility {
 			return true;
 		}
 
-		bool isDateUpdated() {
-			return ((prev.pre_d == day) && (prev.pre_month == month) && (prev.pre_year == year)) ? false : true;
+		bool isDateUpdated(const Date& d) {
+			if (!prev.isFirstCallDone) {
+				prev.isFirstCallDone = true;
+				return true;
+			}
+			return ((prev.pre_d == d.day) && (prev.pre_month == d.month) && (prev.pre_year == d.year)) ? false : true;
 		}
 		bool isLeap(int year) {
 			
@@ -110,7 +110,9 @@ namespace utility {
 		//void intToString(int a);
 		//char* stringRep();
 		//void updateCache(Date& d1);
-		void  getCache() ;
+		//void  setCache() ;
+		String getCache() ;
+		void operator=(const Date& newDate);
 		//int reverseDigits(int num);
 	};
 }
