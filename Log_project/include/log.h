@@ -31,7 +31,7 @@ namespace logging {
                 std::cout << "[Warning]: " << message;
                 //std::cout << Date::cache << std::endl;
                 std::cout << "Date: ";
-                std::cout << d.getCache();
+                 d.getCache();
                 std::cout << " ";
                 print(args...);
                 std::cout << std::endl;
@@ -42,7 +42,7 @@ namespace logging {
             if (m_LogLevel >= LevelError) {
                 std::cout << "[Error]: " << message;
                 std::cout << "Date: ";
-                std::cout<<d.getCache();
+                d.getCache();
                 std::cout << " ";
                 print(args...);
                 std::cout << std::endl;
@@ -53,7 +53,7 @@ namespace logging {
             if (m_LogLevel >= LevelInfo) {
                 std::cout << "[Info]: " << message;
                 std::cout << "Date: ";
-                std::cout << d.getCache();
+              d.getCache();
                 std::cout << " ";
                 print(args...);
                 std::cout << std::endl;

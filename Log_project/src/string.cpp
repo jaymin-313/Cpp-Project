@@ -47,7 +47,6 @@ namespace utility {
             memcpy(result.get(), m_Buffer.get(), m_Size);
             memcpy(result.get() + m_Size, other.m_Buffer.get(), other.m_Size + 1);
 
-            //delete[] m_Buffer;
             m_Size = newSize;
             m_Buffer = std::move(result);
            

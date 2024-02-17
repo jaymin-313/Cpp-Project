@@ -15,15 +15,6 @@ namespace utility {
 		mutable bool isCacheValid = false;
 		String cache;
 		previousDay prev;
-		//void compute_cache_value() {
-		//	if (!cache_valid) {
-		//		dateToString();
-		//		//cache = std::move(date);
-		//		cache_valid = true;
-		//		std::cout << "sourabh\n";
-		//	}
-		//}
-
 	public:
 		Date(int d=1, int m=1, int y=2024) : day{ d }, month{ m }, year{y} {
 
@@ -47,10 +38,6 @@ namespace utility {
 			
 			}
 
-			//compute_cache_value();
-			//dateToString();
-			/*stringRep();
-			compute_cache_value();*/
 		}
 
 		bool dateValid() {
@@ -104,16 +91,9 @@ namespace utility {
 		void addDays(const int d);
 		void addMonths(const int m);
 		void addYears(const int y);
-		//void updateCache(Date& d);
 		int daysInMonth(const int m);
-		//void getUpdatedDate() const;
-		//void intToString(int a);
-		//char* stringRep();
-		//void updateCache(Date& d1);
-		//void  setCache() ;
-		String getCache() ;
+		void getCache();
 		void operator=(const Date& newDate);
-		//int reverseDigits(int num);
 	};
 }
 #endif

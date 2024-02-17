@@ -18,9 +18,9 @@ int main() {
    
     log.Error("Stop ! ");
     log.changeDate(Date{ 5,1,2024 });
-    log.Info("NEw Fine ");
+    log.Info("New Fine ");
     log.changeDate(Date{ 5,1,2024 });
-    log.Info("NEw Fine ");
+    log.Info("New Fine ");
 
     return 0;
 }

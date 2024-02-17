@@ -67,25 +67,7 @@ namespace utility {
             }
             return *this;
         }
-        
-        //String& operator+(String& other) {
-        //   
-        //        size_t new_size = m_Size + other.m_Size;
 
-        //        char* new_data = new char[new_size + 1];
-        //        memcpy(new_data, m_Buffer, m_Size);
-        //        memcpy(new_data + m_Size, other.m_Buffer, other.m_Size);
-        //        //strcat(new_data, other.m_Buffer);
-        //        m_Size = new_size;
-
-        //        delete[] m_Buffer;
-        //        m_Buffer = new_data;
-        //        m_Buffer[m_Size] = '\0';
-        //        print();
-        //        delete[] new_data;
-        //        return *this;
-        //}
-        //
         char operator[](int) ;
         void getlength() const ;
         void tolowercase();
