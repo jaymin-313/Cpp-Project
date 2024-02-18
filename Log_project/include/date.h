@@ -68,23 +68,9 @@ namespace utility {
 			return ((prev.pre_d == d.day) && (prev.pre_month == d.month) && (prev.pre_year == d.year)) ? false : true;
 		}
 		bool isLeap(int year) {
-			
-				if (year % 4 == 0) {
-					if (year % 100 == 0) {
-						if (year % 400 == 0) {
-							return true;
-						}
-						else {
-							return false;
-						}
-					}
-					else {
-						return true;
-					}
-				}
-				else {
-					return false;
-				}
+			if (year % 400 == 0) return true;
+			if (year % 100 == 0) return false;
+			return (year % 4 == 0);
 		}
 		
 		void dateToString();

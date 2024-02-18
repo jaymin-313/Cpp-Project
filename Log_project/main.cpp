@@ -21,7 +21,7 @@ int main() {
     log.Info("New Fine ");
     log.changeDate(Date{ 5,1,2024 });
     log.Info("New Fine ");
-
+   
     return 0;
 }
 

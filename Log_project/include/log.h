@@ -28,10 +28,11 @@ namespace logging {
         template<typename... Args>
         void Warn(const String& message,Args... args) {
             if (m_LogLevel >= LevelWarning) {
+                
+                std::cout << "[";
+                d.getCache();
+                std::cout << "]";
                 std::cout << "[Warning]: " << message;
-                //std::cout << Date::cache << std::endl;
-                std::cout << "Date: ";
-                 d.getCache();
                 std::cout << " ";
                 print(args...);
                 std::cout << std::endl;
@@ -40,9 +41,11 @@ namespace logging {
         template< typename... Args>
         void Error(const String& message, Args... args) {
             if (m_LogLevel >= LevelError) {
-                std::cout << "[Error]: " << message;
-                std::cout << "Date: ";
+                
+                std::cout << "[";
                 d.getCache();
+                std::cout << "]";
+                std::cout << "[Error]: " << message;
                 std::cout << " ";
                 print(args...);
                 std::cout << std::endl;
@@ -51,9 +54,11 @@ namespace logging {
         template<typename... Args>
         void Info(const String& message,Args... args) {
             if (m_LogLevel >= LevelInfo) {
-                std::cout << "[Info]: " << message;
-                std::cout << "Date: ";
-              d.getCache();
+                
+                std::cout << "[";
+                d.getCache();
+                std::cout << "]";
+                std::cout << " [Info]: " << message;
                 std::cout << " ";
                 print(args...);
                 std::cout << std::endl;

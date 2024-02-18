@@ -10,12 +10,11 @@ using namespace utility;
 void Date::dateToString() {
 
 	cache.flush();
-	cache.concatenate(utility::String::intToString(Date::day));
-	cache.concatenate("/");
-	cache.concatenate(utility::String::intToString(Date::month));
-	cache.concatenate("/");
-	cache.concatenate(utility::String::intToString(Date::year));
-
+	String day = utility::String::intToString(Date::day);
+	String month = utility::String::intToString(Date::month);
+	String year = utility::String::intToString(Date::year);
+	
+	cache + day + "/" + month + "/" + year;
 }
 
 void Date::getCache() {

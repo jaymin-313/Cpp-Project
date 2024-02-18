@@ -48,6 +48,19 @@ namespace utility {
             return *this;
 
         }
+        String& operator+(const String& string) {
+            if (string.m_Size != 0) {
+                size_t newSize = m_Size + string.m_Size;
+                std::unique_ptr<char[]> result = std::make_unique<char[]>(newSize + 1);
+                memcpy(result.get(), m_Buffer.get(), m_Size);
+                memcpy(result.get() + m_Size, string.m_Buffer.get(), string.m_Size + 1);
+
+                m_Size = newSize;
+                m_Buffer = std::move(result);
+
+            }
+            return *this;
+        }
         String(String&& string)  noexcept {
            // std::cout << "Move Constructor called" << std::endl;
             m_Buffer = std::move(string.m_Buffer);

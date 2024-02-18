@@ -28,13 +28,17 @@ namespace utility {
     }
     void String::tolowercase() {
         for (int i = 0; i < m_Size; i++) {
-            m_Buffer[i] = tolower(m_Buffer[i]);
+            if (m_Buffer[i] >= 65 && m_Buffer[i] <= 90) {
+                m_Buffer[i] += 32;
+            }
         }
     }
 
     void String::touppercase() {
         for (int i = 0; i < m_Size; i++) {
-            m_Buffer[i] = toupper(m_Buffer[i]);
+            if (m_Buffer[i] >= 97 && m_Buffer[i] <= 122) {
+                m_Buffer[i] -= 32;
+            }
         }
     }
     void String::print() const {
@@ -52,6 +56,7 @@ namespace utility {
            
         }
     }
+
     String String::intToString(int num) {
 
         auto temp{ num };
