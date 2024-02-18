@@ -2,6 +2,7 @@
 #include"exception.h"
 #ifndef DATE_H
 #define DATE_H
+#include<fstream>
 using namespace utility;
 namespace utility {
 
@@ -79,6 +80,25 @@ namespace utility {
 		void addYears(const int y);
 		int daysInMonth(const int m);
 		void getCache();
+		int dumpCache(String& s) {
+			std::ofstream of;
+			std::fstream f;
+			of.open(s.getCharString(), std::ios::app);
+			// If we couldn't open the output file stream for writing 
+			if (!of)
+			{
+				// Print an error and exit 
+				std::cerr << "Uh oh, Sample.txt could not be opened for writing!\n";
+				return 1;
+
+			}
+
+			// We'll write two lines into this file 
+
+			of << cache;
+			of.close();
+			return 0;
+		}
 		void operator=(const Date& newDate);
 	};
 }

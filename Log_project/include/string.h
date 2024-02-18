@@ -80,6 +80,7 @@ namespace utility {
             }
             return *this;
         }
+        char* getCharString();
 
         char operator[](int) ;
         void getlength() const ;

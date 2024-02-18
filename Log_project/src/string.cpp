@@ -56,7 +56,9 @@ namespace utility {
            
         }
     }
-
+    char* String::getCharString() {
+        return m_Buffer.get();
+    }
     String String::intToString(int num) {
 
         auto temp{ num };
