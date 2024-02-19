@@ -16,7 +16,7 @@ namespace logging {
     private:
         Level m_LogLevel = LevelError;
         Date d;
-        String fileName= "database.txt";
+        String fileName{ "database.txt" };
         String output;
     public:
         
@@ -60,6 +60,7 @@ namespace logging {
                 std::cout << std::endl;
                 output = output + " Error: " + message;
                 dumpToFile(output);
+                
             }
         }
         template<typename... Args>
@@ -72,17 +73,18 @@ namespace logging {
                 std::cout << "]";
                 std::cout << " [Info]: " << message;
                 std::cout << " ";
-                print(args...);
-                std::cout << std::endl;
                 output = output + " Info: " + message;
                 dumpToFile(output);
+                print(args...);
+                std::cout << std::endl;
             }
         }
         template <typename T, typename... Types>
         void print(T var1, Types... var2)
         {
             std::cout << var1 << " ";
-
+            dumpToFile(var1);
+            dumpToFile(" ");
             print(var2...);
         }
 
@@ -92,7 +94,8 @@ namespace logging {
            // std::cout << "Last call for print function\n";
                 
         }
-        int dumpToFile(String& s) {
+        template<typename T>
+        int dumpToFile(T& s) {
             std::ofstream of;
             std::fstream f;
             of.open(fileName.getCharString(), std::ios::app);
@@ -107,7 +110,7 @@ namespace logging {
             
                 // We'll write Cache into this file 
                 
-                of << s << '\n';
+                of << s;
                 of.close();
                 return 0;
         }

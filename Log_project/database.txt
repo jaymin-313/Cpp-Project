@@ -1,4 +1,10 @@
-3/1/2024 Info: Fine ! 
+
+3/1/2024 Info: Fine ! 12.3Hello World
+3/1/2024 Warning: Careful ! 
+3/1/2024 Error: Stop ! 
+5/1/2024 Info: New Fine 
+5/1/2024 Info: New Fine 
+3/1/2024 Info: Fine ! 1 2.3 Hello World 
 3/1/2024 Warning: Careful ! 
 3/1/2024 Error: Stop ! 
 5/1/2024 Info: New Fine 

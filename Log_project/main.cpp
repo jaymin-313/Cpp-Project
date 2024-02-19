@@ -13,7 +13,7 @@ int main() {
     Date d2{ 3,1,2024 };
     Log log{ Log::LevelWarning , d2};
     log.SetLogLevel(Log::LevelInfo);
-    log.Info("Fine ! ");
+    log.Info("Fine ! ",1,2.3, "Hello World");
     log.Warn("Careful ! ");
    
     log.Error("Stop ! ");

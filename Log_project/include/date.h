@@ -94,7 +94,7 @@ namespace utility {
 			}
 
 			// We'll write two lines into this file 
-
+			of << '\n';
 			of << cache;
 			of.close();
 			return 0;
