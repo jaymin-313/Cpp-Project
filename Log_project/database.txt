@@ -1,11 +1,6 @@
-
-3/1/2024 Info: Fine ! 12.3Hello World
-3/1/2024 Warning: Careful ! 
-3/1/2024 Error: Stop ! 
-5/1/2024 Info: New Fine 
-5/1/2024 Info: New Fine 
-3/1/2024 Info: Fine ! 1 2.3 Hello World 
-3/1/2024 Warning: Careful ! 
-3/1/2024 Error: Stop ! 
-5/1/2024 Info: New Fine 
-5/1/2024 Info: New Fine 
+20-02-2024 18:04:16 [Info] Fine !  23 3.232320 
+20-02-2024 18:04:16 [Warning] Careful ! 1 2.300000 
+20-02-2024 18:04:16 [Error] Stop ! 23 4.344500 B New String Const char String 
+20-02-2024 18:04:16 [Info] New Fine  
+20-02-2024 18:04:16 [Info] New Fine  
+20-02-2024 18:04:16 [Error] Crashing

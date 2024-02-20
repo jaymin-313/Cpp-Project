@@ -17,14 +17,14 @@ void Date::dateToString() {
 	cache + day + "/" + month + "/" + year;
 }
 
-void Date::getCache() {
+String Date::getCache() {
 	if (!isCacheValid)
 	{
 		dateToString();
 		isCacheValid = true;
 	}
 
-	std::cout << cache;
+	return cache;
 }
 
 bool isLeap(int year) {

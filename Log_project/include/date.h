@@ -14,9 +14,11 @@ namespace utility {
 		};
 		int day, month, year;
 		mutable bool isCacheValid = false;
-		String cache;
+		
 		previousDay prev;
+		
 	public:
+		String cache;
 		Date(int d=1, int m=1, int y=2024) : day{ d }, month{ m }, year{y} {
 
 			try {
@@ -79,26 +81,26 @@ namespace utility {
 		void addMonths(const int m);
 		void addYears(const int y);
 		int daysInMonth(const int m);
-		void getCache();
-		int dumpCache(String& s) {
-			std::ofstream of;
-			std::fstream f;
-			of.open(s.getCharString(), std::ios::app);
-			// If we couldn't open the output file stream for writing 
-			if (!of)
-			{
-				// Print an error and exit 
-				std::cerr << "Uh oh, Sample.txt could not be opened for writing!\n";
-				return 1;
+		String getCache();
+		//int dumpCache(const char* s) {
+		//	std::ofstream of;
+		//	std::fstream f;
+		//	of.open(s , std::ios::app);
+		//	// If we couldn't open the output file stream for writing 
+		//	if (!of)
+		//	{
+		//		// Print an error and exit 
+		//		std::cerr << "Uh oh, Sample.txt could not be opened for writing!\n";
+		//		return 1;
 
-			}
+		//	}
 
-			// We'll write two lines into this file 
-			of << '\n';
-			of << cache;
-			of.close();
-			return 0;
-		}
+		//	// We'll write two lines into this file 
+		//	//of << '\n';
+		//	of << cache;
+		//	of.close();
+		//	return 0;
+		//}
 		void operator=(const Date& newDate);
 	};
 }

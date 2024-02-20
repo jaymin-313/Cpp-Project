@@ -31,7 +31,7 @@ namespace utility {
            
             m_Buffer = std::make_unique<char[]>(m_Size + 1);
 
-            memcpy(m_Buffer.get(), &string, m_Size);
+            memcpy(m_Buffer.get(), string.m_Buffer.get(), m_Size);
             m_Buffer[m_Size] = 0;
            // return m_Buffer;
         }
@@ -41,7 +41,7 @@ namespace utility {
                 //delete[]m_Buffer;
                 m_Size = string.m_Size;
                m_Buffer = std::make_unique<char[]>(m_Size + 1);
-                memcpy(m_Buffer.get(), &string , m_Size);
+                memcpy(m_Buffer.get(), string.m_Buffer.get(), m_Size);
                 m_Buffer[m_Size] = 0;
             }
 

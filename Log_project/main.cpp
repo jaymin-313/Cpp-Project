@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include<string>
 #include "include\log.h" 
 #include "include\date.h"
 #include "include\string.h"
@@ -10,18 +10,20 @@ using namespace utility;
 
 int main() {
   
-    Date d2{ 3,1,2024 };
-    Log log{ Log::LevelWarning , d2};
+    
+    Log log{ Log::LevelWarning};
     log.SetLogLevel(Log::LevelInfo);
-    log.Info("Fine ! ",1,2.3, "Hello World");
-    log.Warn("Careful ! ");
-   
-    log.Error("Stop ! ");
-    log.changeDate(Date{ 5,1,2024 });
+
+    log.Info("Fine ! ",23 , 3.23232);
+    log.Warn("Careful ! ", 1, 2.3);
+    std::string s1 = "New String";
+    log.Error("Stop ! ",23,4.3445,'B',s1,"Const char String");
+   //log.changeDate(Date{ 5,1,2024 });
     log.Info("New Fine ");
-    log.changeDate(Date{ 5,1,2024 });
+   // log.changeDate(Date{ 5,1,2024 });
     log.Info("New Fine ");
-   
+    log.Error("Crashing");
+    
     return 0;
 }
 
